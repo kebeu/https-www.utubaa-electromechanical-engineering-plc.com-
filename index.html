@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Utubaa Electro Mechanical Solution PLC | MEP Contractors Ethiopia</title>
+    <meta name="description" content="Utubaa Electro Mechanical Solution PLC provides professional MEP services: Machine Instalation, Mechanichal maintenance, electrical, plumbing, HVAC, fire safety, generators in Ethiopia. Reliable & certified.">
+    <meta name="keywords" content="electrical contractor Ethiopia, MEP, HVAC, plumbing, generator installation, fire alarm, Utubaa">
+    <meta name="author" content="Utubaa Electro Mechanical Solution PLC">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e2a3a;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: #0f2b3d;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo h1 {
+            font-size: 1.7rem;
+            letter-spacing: -0.5px;
+        }
+        .logo p {
+            font-size: 0.85rem;
+            color: #e67e22;
+            font-weight: 500;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            color: #e67e22;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                margin-top: 20px;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #cf711f;
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0f2b3d 0%, #1a3f53 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .stat h3 {
+            font-size: 2rem;
+            color: #e67e22;
+        }
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        .hero-image i {
+            font-size: 10rem;
+            color: #e67e22;
+            opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+            .hero-text h2 { font-size: 2rem; }
+            .hero-image i { font-size: 6rem; }
+        }
+
+        section {
+            padding: 70px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: #0f2b3d;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: #e67e22;
+            margin: 12px auto 0;
+            border-radius: 3px;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: 0.2s;
+        }
+        .service-card i {
+            font-size: 3rem;
+            color: #e67e22;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            margin-bottom: 15px;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Gallery Filter */
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .filter-btn {
+            background: #e9ecef;
+            border: none;
+            padding: 10px 24px;
+            margin: 0 8px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: #e67e22;
+            color: white;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .gallery-item {
+            position: relative;
+            height: 280px;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: 0.5s;
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, #0f2b3d, transparent);
+            color: white;
+            padding: 20px;
+            transition: 0.3s;
+        }
+        .gallery-item:hover .gallery-overlay {
+            bottom: 0;
+        }
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+        .gallery-item.hide {
+            display: none;
+        }
+
+        /* About */
+        .about-content {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .cert-badge {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .cert-badge span {
+            background: #e9ecef;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 28px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        }
+        .contact-info {
+            flex: 1;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 40px;
+            font-family: inherit;
+        }
+        textarea {
+            border-radius: 24px;
+        }
+        .contact-detail {
+            margin-bottom: 25px;
+        }
+        .contact-detail i {
+            font-size: 1.5rem;
+            color: #e67e22;
+            width: 40px;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            font-size: 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 99;
+            transition: 0.2s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+        }
+        .social-links a {
+            color: #0f2b3d;
+            margin: 0 12px;
+            font-size: 1.4rem;
+            transition: 0.2s;
+            display: inline-block;
+        }
+        .social-links a:hover {
+            color: #e67e22;
+        }
+        .map-placeholder {
+            background: #d9e2e8;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 24px;
+            margin-top: 20px;
+        }
+        footer {
+            background: #0f2b3d;
+            color: #adb7c2;
+            text-align: center;
+            padding: 32px 0;
+        }
+        .form-success {
+            color: #27ae60;
+            margin-top: 12px;
+        }
+        .form-error {
+            color: #e74c3c;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/251920953943?text=Hello%20Utubaa%2C%20I%20need%20a%20quote%20for%20a%20project" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<header>
+    <div class="container header-flex">
+        <div class="logo">
+            <h1>UTUBAA</h1>
+            <p>Electro Mechanical Engineering PLC</p>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <h2>Powering Progress,<br>Engineering Excellence</h2>
+            <p>Utubaa delivers top-tier electro-mechanical solutions — Mechanical Maintenance, Machine Instalation, 3D Cad Softwares, PLC Programing, Electrical, Plumbing, HVAC, Fire Safety & Generators backup across Ethiopia.</p>
+            <a href="#contact" class="btn">Request a Quote →</a>
+            <div class="hero-stats">
+                <div class="stat"><h3>150+</h3><p>Projects</p></div>
+                <div class="stat"><h3>22+</h3><p>Years Experience</p></div>
+                <div class="stat"><h3>24/7</h3><p>Support</p></div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <i class="fas fa-microchip"></i>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About Utubaa</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p><strong>Utubaa Electro Mechanical Engineering PLC</strong> Utubaa Electro Mechanical Engineering PLC stands today as one of Ethiopia's most trusted MEP contractors—a reputation forged not overnight, but through nearly three decades of resilience, reinvention, and relentless technical excellence.
+
+The company's roots trace back to 1995, when it was first established in the town of Kuyyu Gebre Gurracha under the original name Utuba M Mechanical & Electrical Works. With nothing more than a bold vision and an initial capital of just 200,000 Ethiopian Birr, the fledgling enterprise began its journey in a modest workshop, undertaking small-scale mechanical and electrical tasks with hands-on dedication.
+
+Over the years, through strategic reform, organizational maturity, and an unwavering commitment to quality, the company underwent a fundamental transformation. It was rebranded as Utubaa Electro Mechanical Engineering PLC—a name that reflects broader technical scope, professionalism, and a renewed corporate identity. Alongside this change, the company made a pivotal strategic decision: to relocate its central operations, including its main office and fully equipped workshops, to Suluta, Shegegar City—a growing industrial hub offering better infrastructure, client access, and room for expansion.
+
+Today, Utubaa Electro Mechanical Engineering PLC delivers end-to-end engineering solutions that span the full MEP spectrum and beyond. 
+Its core competencies include:
+
+Industrial electrical systems – from power distribution to control panels
+
+HVAC systems – heating, ventilation, and air conditioning for commercial and industrial spaces
+
+Machine maintenance – preventive and corrective upkeep for production machinery
+
+Factory installation – complete electromechanical setup for manufacturing plants
+
+PLC programming and configuration – automation and process control tailored to industry needs
+
+Fire alarm systems – detection and safety solutions compliant with international standards
+
+Generator backup systems – reliable power redundancy for uninterrupted operations
+
+Across every project, Utubaa remains anchored to three uncompromising pillars: safety, efficiency, and reliability. Whether serving a small enterprise or a large industrial facility, the company brings engineering precision, local expertise, and a proven legacy of adapting and thriving—from a 200,000 Birr startup in Kuyyu Gebre Gurracha to a leading MEP contractor operating from Shegegar City, serving clients across Ethiopia..</p>
+                <p>Our mission is to provide sustainable electro-mechanical infrastructure that drives Ethiopia's construction and industrial growth. Fully licensed, insured, and certified.</p>
+                <div class="cert-badge">
+                    <span>ISO 9001:2021</span>
+                    <span>Certified Electricians</span>
+                    <span>OSH Compliant</span>
+                    <span>Member ECA</span>
+                </div>
+            </div>
+            <div class="about-text">
+                <p><strong>Vision:</strong> To be the leading electro-mechanical partner in East Africa, known for integrity and technical mastery.</p>
+                <p>Our team of engineers and technicians bring decades of combined experience in commercial, residential, and industrial projects.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" style="background: #f1f5f9;">
+    <div class="container">
+        <h2 class="section-title">Our Core Services</h2>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-bolt"></i><h3>Electrical Installation</h3><p>Power distribution, lighting, control panels, wiring for factories & Machineries.</p></div>
+            <div class="service-card"><i class="fas fa-water"></i><h3>Mechanical Machine Maintenance</h3><p> power supply, Automation systems, PLC programing, and Software Configration.</p></div>
+            <div class="service-card"><i class="fas fa-wind"></i><h3>HVAC Systems</h3><p>AC, ventilation, chillers, ducting, and indoor air quality solutions.</p></div>
+            <div class="service-card"><i class="fas fa-fire-extinguisher"></i><h3>Fire Safety</h3><p>Alarm systems, sprinklers, fire pumps, and code compliance.</p></div>
+            <div class="service-card"><i class="fas fa-industry"></i><h3>Generator & UPS</h3><p>Installation, synchronization, automatic transfer switches, maintenance.</p></div>
+            <div class="service-card"><i class="fas fa-tools"></i><h3>Maintenance Contracts</h3><p>Preventive & corrective maintenance for any Industry.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Gallery with Filter -->
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">Our Portfolio</h2>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="electrical">Electrical</button>
+            <button class="filter-btn" data-filter="hvac">HVAC</button>
+            <button class="filter-btn" data-filter="Maintenance">Maintenance</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <div class="gallery-item" data-category="electrical">
+                <div class="gallery-img" style="background-image: url('https://via.placeholder.com/400x300/0f2b3d/white?text=Electrical+Control+Panel');"></div>
+                <div class="gallery-overlay">
+                    <h3>Industrial Electrical Panel</h3>
+                    <p>Shegar City Suluta | 2024</p>
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="hvac">
+                <div class="gallery-img" style="background-image: url('https://via.placeholder.com/400x300/1a3f53/white?text=HVAC+Chiller+System');"></div>
+                <div class="gallery-overlay">
+                    <h3>Central AC Installation</h3>
+                    <p>St. Paul Hospital | 2023</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="plumbing">
+                <div class="gallery-img" style="background-image: url('https://via.placeholder.com/400x300/2c5a74/white?text=Plumbing+Pipes');"></div>
+                <div class="gallery-overlay">
+                    <h3>Water Supply System</h3>
+                    <p>Shegar City Suluta| 2024</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="electrical">
+                <div class="gallery-img" style="background-image: url('https://via.placeholder.com/400x300/0f2b3d/white?text=Generator+Installation');"></div>
+                <div class="gallery-overlay">
+                    <h3>Machinerie Installation</h3>
+                    <p>Any Industrial Park | 2024</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="hvac">
+                <div class="gallery-img" style="background-image: url('https://via.placeholder.com/400x300/1a3f53/white?text=VRV+Air+Conditioning');"></div>
+                <div class="gallery-overlay">
+                    <h3>VRV Air Conditioning</h3>
+                    <p>Hotels | 2022</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="plumbing">
+                <div class="gallery-img" style="background-image: url('https://via.placeholder.com/400x300/2c5a74/white?text=Fire+Sprinkler+System');"></div>
+                <div class="gallery-overlay">
+                    <h3>Fire Sprinkler System</h3>
+                    <p>Commercial Bank HQ | 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section with Working Form -->
+<section id="contact" style="background: #eef2f5;">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-form">
+                <!-- IMPORTANT: Replace YOUR_ENDPOINT_HERE with your actual Formspree endpoint -->
+                <form id="contactForm" action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <textarea name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+                    <input type="hidden" name="_subject" value="New Quote Request from Utubaa Website">
+                    <input type="hidden" name="_replyto" value="email">
+                    <button type="submit" class="btn" style="width:100%">Send Message →</button>
+                    <div id="formStatus"></div>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <strong>Office:</strong> Sululta, Sheger City, Ethiopia</div>
+                <div class="contact-detail"><i class="fas fa-phone-alt"></i> <strong>Call:</strong> +251-920953943, +251-949815280</div>
+                <div class="contact-detail"><i class="fas fa-envelope"></i> <strong>Email:</strong> info@utubaa.com</div>
+                <div class="contact-detail"><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> +251-920953943, +251-949815280</div>
+                <div class="social-links" style="margin-top:20px">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="map-placeholder">
+                    <i class="fas fa-map" style="font-size:2rem; margin-bottom:10px; display:block;"></i>
+                    <small>📍 Google Map –Sheger)</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Utubaa Electro Mechanical Solution PLC | All Rights Reserved</p>
+        <p style="margin-top:10px">Reliable MEP Contractors in Ethiopia | Electrical | PlC | Machinerie Instalation | Fire & Safety</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    if(menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if(targetId === "#" || targetId === "") return;
+            const target = document.querySelector(targetId);
+            if(target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+                if(navLinks.classList.contains('show')) navLinks.classList.remove('show');
+            }
+        });
+    });
+
+    // Gallery filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filterValue = btn.getAttribute('data-filter');
+            galleryItems.forEach(item => {
+                if(filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.classList.remove('hide');
+                } else {
+                    item.classList.add('hide');
+                }
+            });
+        });
+    });
+
+    // Contact form AJAX submission (no page reload)
+    const form = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('formStatus');
+    
+    if(form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            statusDiv.innerHTML = 'Sending...';
+            statusDiv.className = '';
+            
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if(response.ok) {
+                    statusDiv.innerHTML = '✓ Thank you! Our team will contact you within 24 hours.';
+                    statusDiv.className = 'form-success';
+                    form.reset();
+                } else {
+                    const data = await response.json();
+                    if(data.errors) {
+                        statusDiv.innerHTML = '⚠ ' + data.errors.map(error => error.message).join(', ');
+                    } else {
+                        statusDiv.innerHTML = '⚠ Oops! Something went wrong. Please email us directly: info@utubaa.com';
+                    }
+                    statusDiv.className = 'form-error';
+                }
+            } catch(error) {
+                statusDiv.innerHTML = '⚠ Network error. Please email us directly: info@utubaa.com';
+                statusDiv.className = 'form-error';
+            }
+        });
+    }
+</script>
+</body>
+</html>
